@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Yönsa Yazılım ve Teknoloji</title>
-  <meta name="description" content="Yönsa Yazılım ve Teknoloji A.Ş. — sektörel SaaS ve özel yazılım geliştirme. Kurumsal tanıtım + geliştiricilere yönelik engineering hub." />
+  <title>Yönsa Yazılım Ve Teknoloji</title>
+  <meta name="description" content="Yönsa Yazılım Ve Teknoloji — kurumsal tanıtım, mühendislik kültürü, GitHub ve API dokümantasyonu. Geliştiriciler için rehberler ve kaynaklar." />
   <meta name="color-scheme" content="dark light" />
   <style>
     :root{
@@ -16,7 +16,7 @@
       --muted: rgba(233,239,255,.72);
       --muted2: rgba(233,239,255,.58);
       --brand:#7cb3ff; --brand2:#2b6cff;
-      --ok:#34d399; --warn:#fbbf24; --danger:#fb7185;
+      --ok:#34d399; --warn:#fbbf24;
       --shadow: 0 18px 60px rgba(0,0,0,.45);
       --r:16px; --r2:22px; --max:1120px;
       --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
@@ -65,6 +65,7 @@
       padding:10px 12px; border-radius:999px;
       border:1px solid rgba(255,255,255,.14);
       background: rgba(255,255,255,.06);
+      cursor:pointer;
     }
     .btn:hover{background:rgba(255,255,255,.10)}
     .btn.primary{
@@ -72,7 +73,7 @@
       border-color: rgba(124,179,255,.45);
       color:#081226;
     }
-    .hero{padding:64px 0 22px}
+    .hero{padding:66px 0 26px}
     .hero-grid{display:grid; grid-template-columns: 1.12fr .88fr; gap:14px; align-items:stretch}
     .kicker{
       display:inline-flex; align-items:center; gap:10px;
@@ -86,7 +87,7 @@
     }
     .dot{width:8px;height:8px;border-radius:99px;background:var(--ok); box-shadow:0 0 0 4px rgba(52,211,153,.12)}
     h1{margin:14px 0 10px; font-size:44px; letter-spacing:-.6px; line-height:1.08}
-    .sub{margin:0 0 18px; color:var(--muted); font-size:16.5px; max-width:80ch}
+    .sub{margin:0 0 18px; color:var(--muted); font-size:16.5px; max-width:86ch}
     .cta{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
     .panel{
       background: var(--panel);
@@ -115,10 +116,10 @@
       font-size:12px;
       margin-bottom:10px;
     }
-    section{padding:42px 0}
+    section{padding:44px 0}
     .section-title{display:flex; align-items:flex-end; justify-content:space-between; gap:14px; margin-bottom:14px}
     .section-title h2{margin:0; font-size:26px; letter-spacing:-.3px}
-    .section-title p{margin:0; color:var(--muted); max-width:90ch}
+    .section-title p{margin:0; color:var(--muted); max-width:92ch}
     .hr{height:1px; background:rgba(255,255,255,.10); margin:16px 0}
     .codebox{
       border-radius: 16px;
@@ -142,19 +143,6 @@
       white-space: pre-wrap;
       word-break: break-word;
     }
-    .status{display:flex; align-items:center; gap:10px; flex-wrap:wrap}
-    .badge{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:7px 10px; border-radius:999px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.04);
-      color: var(--muted);
-      font-family: var(--mono);
-      font-size:12px;
-    }
-    .led{width:8px;height:8px;border-radius:99px; background:var(--ok); box-shadow:0 0 0 4px rgba(52,211,153,.10)}
-    .led.warn{background:var(--warn); box-shadow:0 0 0 4px rgba(251,191,36,.10)}
-    .led.danger{background:var(--danger); box-shadow:0 0 0 4px rgba(251,113,133,.10)}
     .kv{display:grid; gap:10px}
     .kv-row{
       display:flex; align-items:flex-start; justify-content:space-between; gap:14px;
@@ -173,6 +161,18 @@
       padding:6px 10px; border-radius:999px;
       width:max-content;
     }
+    .status{display:flex; align-items:center; gap:10px; flex-wrap:wrap}
+    .badge{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:7px 10px; border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size:12px;
+    }
+    .led{width:8px;height:8px;border-radius:99px; background:var(--ok); box-shadow:0 0 0 4px rgba(52,211,153,.10)}
+    .led.warn{background:var(--warn); box-shadow:0 0 0 4px rgba(251,191,36,.10)}
     .footer{
       padding:30px 0 44px;
       border-top:1px solid rgba(255,255,255,.10);
@@ -191,6 +191,8 @@
       color:var(--muted);
     }
     .muted{color:var(--muted)}
+    .list{margin:0; padding-left:18px; color:var(--muted)}
+    .list li{margin:8px 0}
     @media (max-width: 980px){
       .hero-grid{grid-template-columns:1fr}
       h1{font-size:38px}
@@ -206,121 +208,152 @@
   <header class="top">
     <div class="container">
       <div class="top-inner">
-        <a class="brand" href="#">
+        <a class="brand" href="#top">
           <span class="mark" aria-hidden="true"></span>
-          <b>Yönsa Yazılım ve Teknnoloji A.Ş.</b>
+          <b>Yönsa Yazılım Ve Teknoloji</b>
         </a>
         <nav>
           <a href="#about">about</a>
-          <a href="#products">products</a>
+          <a href="#culture">culture</a>
           <a href="#engineering">engineering</a>
-          <a href="#oss">oss</a>
-          <a href="#security">security</a>
+          <a href="#github">github</a>
+          <a href="#api">api</a>
           <a href="#contact">contact</a>
         </nav>
-        <a class="btn primary" href="#contact">İletişim</a>
+        <a class="btn primary" href="#github">GitHub</a>
       </div>
     </div>
   </header>
 
-  <main>
+  <main id="top">
+    <!-- HERO -->
     <section class="hero" id="about">
       <div class="container">
         <div class="hero-grid">
           <div>
-            <div class="kicker"><span class="dot"></span><span>company + engineering</span></div>
-            <h1>Yönsa Yazılım ve Teknoloji</h1>
+            <div class="kicker"><span class="dot"></span><span>company hub • github.yonsa.com.tr</span></div>
+            <h1>Yönsa Yazılım Ve Teknoloji</h1>
             <p class="sub">
-              Yönsa, sektörel SaaS ürünleri ve özel yazılım geliştirme çalışmaları yürütür.
-              Bu sayfa hem genel tanıtım hem de geliştiriciler için teknik kaynaklara giriş noktasıdır.
+              Sektörel SaaS ürünleri, özel yazılım geliştirme ve operasyonel otomasyonlar üzerinde çalışan bir yazılım ekibiyiz.
+              Bu sayfa; kurumsal özetin yanında GitHub ve geliştiricilere yönelik kaynaklara tek noktadan erişim vermek için tasarlandı.
             </p>
             <div class="cta">
               <a class="btn primary" href="https://www.yonsa.com.tr" target="_blank" rel="noreferrer">Kurumsal Site</a>
-              <a class="btn" href="#engineering">Geliştirici Alanı</a>
-              <a class="btn" href="#oss">GitHub Repos</a>
+              <a class="btn" href="#engineering">Mühendislik Yaklaşımı</a>
+              <a class="btn" href="https://www.yonsa.com.tr/api/docs/" target="_blank" rel="noreferrer">API Docs</a>
             </div>
             <p class="sub" style="margin-top:12px;color:var(--muted2);font-family:var(--mono);font-size:12.5px">
-              Publish: GitHub Pages • Domain: <span class="kbd">labs.yonsa.com.tr</span> (önerilen) • SSL: automatic
+              Not: Repo listesi burada tutulmaz; repo görmek isteyenler doğrudan GitHub organizasyon sayfasına yönlendirilir.
             </p>
           </div>
 
           <aside class="panel hero-card">
-            <div class="tag">overview</div>
+            <div class="tag">quick links</div>
             <div class="hr"></div>
+
             <div class="kv">
-              <div class="kv-row"><b>Focus</b><span>Sektörel SaaS • Özel yazılım</span></div>
-              <div class="kv-row"><b>Delivery</b><span>Multi-tenant patterns • modular design</span></div>
-              <div class="kv-row"><b>Quality</b><span>CI/CD • logging • monitoring</span></div>
+              <div class="kv-row"><b>Website</b><span>yonsa.com.tr</span></div>
+              <div class="kv-row"><b>API docs</b><span>yonsa.com.tr/api/docs</span></div>
+              <div class="kv-row"><b>GitHub</b><span id="gh-mini">set org url</span></div>
               <div class="kv-row"><b>Contact</b><span>iletisim@yonsa.com.tr</span></div>
             </div>
+
             <div class="hr"></div>
+
             <div class="status">
-              <span class="badge"><span class="led"></span>website: online</span>
-              <span class="badge"><span class="led"></span>docs: starting</span>
-              <span class="badge"><span class="led warn"></span>api: draft</span>
+              <span class="badge"><span class="led"></span>pages: live</span>
+              <span class="badge"><span class="led warn"></span>https: provisioning</span>
+              <span class="badge"><span class="led"></span>docs: available</span>
             </div>
           </aside>
         </div>
       </div>
     </section>
 
-    <section id="products">
+    <!-- WHAT WE DO -->
+    <section>
       <div class="container">
         <div class="section-title">
-          <h2>Ürün yaklaşımı</h2>
-          <p>İhtiyaçları tek bir panelde toparlayan, modüler genişleyebilen ve süreçleri izlenebilir kılan ürün kurguları.</p>
+          <h2>Ne yapıyoruz?</h2>
+          <p>Ürün geliştirme + özel geliştirme + entegrasyon. Odak: sürdürülebilir kod, izlenebilir operasyon, güvenli veri akışı.</p>
         </div>
 
         <div class="grid3">
           <div class="card">
             <div class="pill">sektörel-saas</div>
-            <h3>Sektörel ürünler</h3>
-            <p>Emlak, salon, klinik, restoran gibi dikeylerde süreçleri standardize eden ürün yapıları.</p>
+            <h3>Sektörel SaaS</h3>
+            <p>Dikey ihtiyaçlara göre şekillenen, modüler genişleyebilen ve yönetilebilir ürün kurguları.</p>
           </div>
           <div class="card">
             <div class="pill">custom-dev</div>
-            <h3>Özel yazılım</h3>
-            <p>İş akışına özel geliştirme, entegrasyon, veri dönüşümü ve otomasyon çalışmaları.</p>
+            <h3>Özel geliştirme</h3>
+            <p>İş akışına özel entegrasyonlar, otomasyonlar, veri dönüşümü ve arka uç servisleri.</p>
           </div>
           <div class="card">
-            <div class="pill">ai-components</div>
-            <h3>AI bileşenleri</h3>
-            <p>Destek, görüşme analizi, sınıflandırma/özetleme gibi modüler AI entegrasyonları.</p>
-          </div>
-        </div>
-
-        <div class="hr"></div>
-
-        <div class="grid2">
-          <div class="card">
-            <h3>Dokümantasyon kültürü</h3>
-            <p>Runbook, değişiklik notları ve entegrasyon rehberleri; sürdürülebilir geliştirme için temel kabul edilir.</p>
-          </div>
-          <div class="card">
-            <h3>Güvenlik ve izlenebilirlik</h3>
-            <p>Yetkilendirme, tenant izolasyonu ve gözlemlenebilirlik; ürün kararlarının merkezindedir.</p>
+            <div class="pill">ops-quality</div>
+            <h3>Operasyon & kalite</h3>
+            <p>CI/CD, log/metric, hataya dayanıklı akışlar, sürümleme ve değişiklik yönetimi.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="engineering">
+    <!-- CULTURE -->
+    <section id="culture">
       <div class="container">
         <div class="section-title">
-          <h2>Geliştirici alanı</h2>
-          <p>Entegrasyon, mimari notlar ve örnekler. Bu bölüm “public” olacaksa linkleri güncelleyeceğiz.</p>
+          <h2>Çalışma kültürü</h2>
+          <p>Hız kadar doğruluk ve bakım maliyeti de önemlidir. Kültür maddeleri pratik ve uygulanabilir olmalı.</p>
         </div>
 
         <div class="grid2">
           <div class="card">
-            <div class="pill">stack</div>
-            <h3>Stack (örnek)</h3>
-            <p>Node.js • TypeScript • MongoDB • Docker • CI/CD • Observability.</p>
+            <div class="pill">clarity</div>
+            <h3>Netlik</h3>
+            <p>“Ne yaptık?” değil “neden yaptık?” sorusunu dokümante ederiz. Gereksiz karmaşa yerine net akış.</p>
           </div>
           <div class="card">
-            <div class="pill">patterns</div>
-            <h3>Multi-tenant SaaS</h3>
-            <p>Tenant boundary, audit log, role/scope, rate-limit, idempotency gibi temel desenler.</p>
+            <div class="pill">ownership</div>
+            <h3>Sahiplenme</h3>
+            <p>Üretimde çalışan şeyin sorumluluğu paylaşılır: izleme, hata analizi, iyileştirme ve geri bildirim döngüsü.</p>
+          </div>
+          <div class="card">
+            <div class="pill">review</div>
+            <h3>Code review</h3>
+            <p>Review; “hata yakalama” değil “kalite standardı”dır. Küçük PR, hızlı geri dönüş, net kriter.</p>
+          </div>
+          <div class="card">
+            <div class="pill">ship-learn</div>
+            <h3>Ship → ölç → öğren</h3>
+            <p>Ölçülemeyen iş geliştirilemez. Basit metrikler, anlamlı dashboard’lar ve iteratif geliştirme.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ENGINEERING -->
+    <section id="engineering">
+      <div class="container">
+        <div class="section-title">
+          <h2>Yazılım yaklaşımı</h2>
+          <p>Geliştiriciye yönelik özet: sürdürülebilir mimari, güvenli sınırlar, gözlemlenebilirlik, basitlik.</p>
+        </div>
+
+        <div class="grid3">
+          <div class="card">
+            <div class="pill">architecture</div>
+            <h3>Mimari</h3>
+            <p>Net sınırlar, modüler bileşenler, sürümleme ve geriye dönük uyumluluk prensipleri.</p>
+          </div>
+          <div class="card">
+            <div class="pill">multi-tenant</div>
+            <h3>İzolasyon</h3>
+            <p>Tenant boundary, yetkilendirme, audit log ve güvenli veri erişimi temel kabul edilir.</p>
+          </div>
+          <div class="card">
+            <div class="pill">observability</div>
+            <h3>Observability</h3>
+            <p>Log + metric + trace ile kök neden analizi. Correlation id ve anlamlı alarmlar.</p>
           </div>
         </div>
 
@@ -328,93 +361,88 @@
 
         <div class="codebox">
           <div class="codebar">
-            <span>API quickstart (placeholder)</span>
-            <span>curl + token</span>
+            <span>developer checklist</span>
+            <span>practical</span>
           </div>
           <pre>
-export YONSA_TOKEN="YOUR_TOKEN"
-
-curl -sS https://api.yonsa.com.tr/health \
-  -H "Authorization: Bearer $YONSA_TOKEN"
-
-curl -sS https://api.yonsa.com.tr/v1/resources \
-  -H "Authorization: Bearer $YONSA_TOKEN" \
-  -H "Content-Type: application/json"
+- Küçük PR: tek amaç, tek değişiklik
+- Idempotency: webhook / retry senaryolarında şart
+- Versioning: breaking change = yeni sürüm
+- Logs: request-id/correlation-id olmadan prod debug olmaz
+- Docs: "nasıl çalışır?" kadar "neden böyle?" de yaz
           </pre>
         </div>
-
-        <p class="muted" style="margin-top:10px">
-          Not: API henüz public değilse bu alanı “coming soon” olarak bırakabiliriz.
-        </p>
       </div>
     </section>
 
-    <section id="oss">
+    <!-- GITHUB -->
+    <section id="github">
       <div class="container">
         <div class="section-title">
-          <h2>Open-source & repositories</h2>
-          <p>Az ama gerçek repo yaklaşımı. İlk hedef: kurumsal profil + 1 küçük yardımcı paket/örnek.</p>
-        </div>
-
-        <div class="grid3">
-          <div class="card">
-            <div class="pill">repo</div>
-            <h3>yonsa-company-profile</h3>
-            <p>Kurumsal GitHub vitrini: kimlik, alanlar, linkler.</p>
-          </div>
-          <div class="card">
-            <div class="pill">docs</div>
-            <h3>docs (starting)</h3>
-            <p>Kurulum, entegrasyon, operasyon runbook ve değişiklik notları.</p>
-          </div>
-          <div class="card">
-            <div class="pill">sdk (optional)</div>
-            <h3>client SDK (optional)</h3>
-            <p>API public olursa minimal SDK + örnek projeler.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="security">
-      <div class="container">
-        <div class="section-title">
-          <h2>Security</h2>
-          <p>Güvenlik bildirimi için tek bir kanal ve net beklenti: sorumlu açıklama, hızlı triage.</p>
+          <h2>GitHub</h2>
+          <p>Repo oluşturma, katkı akışı ve repo keşfi için tek giriş noktası. Repo listesi bu sayfada tutulmaz.</p>
         </div>
 
         <div class="grid2">
           <div class="card">
-            <div class="pill">reporting</div>
-            <h3>Vulnerability reporting</h3>
-            <p>Güvenlik bildirimi: <span class="kbd">security@yonsa.com.tr</span> (yoksa bu maili açman iyi olur).</p>
+            <div class="pill">repositories</div>
+            <h3>Repo’ları görüntüle</h3>
+            <p>Yönsa’nın açık/kapalı repo düzeni, projeler ve örnekler GitHub organizasyon sayfasında.</p>
+            <div class="hr"></div>
+            <a class="btn primary" id="gh-org-btn" href="#" target="_blank" rel="noreferrer">GitHub Organizasyonuna Git</a>
           </div>
+
           <div class="card">
-            <div class="pill">policy</div>
-            <h3>Disclosure policy</h3>
-            <p>72 saat içinde ilk dönüş, doğrulama ve takvimli düzeltme prensibi (isteğe göre revize).</p>
+            <div class="pill">contribution</div>
+            <h3>Katkı yaklaşımı (özet)</h3>
+            <ul class="list">
+              <li>Issue template: net problem tanımı + beklenti</li>
+              <li>Branch: feature/bugfix isimlendirme</li>
+              <li>PR: küçük, testli, açıklamalı</li>
+              <li>Changelog: değişiklik kaydı tutulur</li>
+            </ul>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- API -->
+    <section id="api">
+      <div class="container">
+        <div class="section-title">
+          <h2>API Dokümantasyonu</h2>
+          <p>Entegrasyon ve referans dökümantasyon için merkezi giriş. (Swagger / OpenAPI vb.)</p>
+        </div>
+
+        <div class="panel" style="padding:16px">
+          <div class="kv">
+            <div class="kv-row"><b>API docs</b><span>https://www.yonsa.com.tr/api/docs/</span></div>
+            <div class="kv-row"><b>Notes</b><span>Yetkilendirme/versiyonlama bilgileri docs içinde yer alır.</span></div>
+          </div>
+          <div class="hr"></div>
+          <a class="btn primary" href="https://www.yonsa.com.tr/api/docs/" target="_blank" rel="noreferrer">API Docs’a Git</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
     <section id="contact">
       <div class="container">
         <div class="section-title">
           <h2>İletişim</h2>
-          <p>Genel iletişim ve teknik iş birlikleri için tek nokta üzerinden ilerleyebiliriz.</p>
+          <p>Kurumsal görüşmeler, teknik iş birlikleri ve entegrasyon ihtiyaçları için tek kanal.</p>
         </div>
 
         <div class="panel" style="padding:16px">
           <div class="kv">
             <div class="kv-row"><b>Email</b><span>iletisim@yonsa.com.tr</span></div>
-            <div class="kv-row"><b>Website</b><span>yonsa.com.tr</span></div>
-            <div class="kv-row"><b>GitHub</b><span>(organization linkini buraya koyacağız)</span></div>
+            <div class="kv-row"><b>Website</b><span>https://www.yonsa.com.tr</span></div>
+            <div class="kv-row"><b>GitHub</b><span id="gh-org-text">set org url</span></div>
           </div>
         </div>
 
         <p class="muted" style="margin-top:12px">
-          Domain önerisi: <span class="kbd">labs.yonsa.com.tr</span> → GitHub Pages. DNS’i birlikte bağlayacağız.
+          Teknik not: GitHub Pages üzerinde custom domain ile yayınlanır. HTTPS aktif olduğunda HTTP otomatik yönlenir.
         </p>
       </div>
     </section>
@@ -425,13 +453,13 @@ curl -sS https://api.yonsa.com.tr/v1/resources \
           <div>
             <div class="brand" style="gap:10px">
               <span class="mark" aria-hidden="true"></span>
-              <b>Yönsa Yazılım ve Teknoloji A.Ş.</b>
+              <b>Yönsa Yazılım Ve Teknoloji</b>
             </div>
-            <small>© <span id="y"></span> • GitHub Pages üzerinde yayınlanabilir.</small>
+            <small>© <span id="y"></span> • github.yonsa.com.tr</small>
           </div>
           <div class="contact">
-            <span>İletişim: iletisim@yonsa.com.tr</span>
-            <span class="muted">Bu sayfa: company + engineering hub.</span>
+            <span>API Docs: <span class="kbd">/api/docs</span></span>
+            <span class="muted">Bu sayfa: kurumsal + GitHub kaynak merkezi.</span>
           </div>
         </div>
       </div>
@@ -439,7 +467,12 @@ curl -sS https://api.yonsa.com.tr/v1/resources \
   </main>
 
   <script>
+    const GITHUB_ORG_URL = "https://github.com/Yonsa-Yazilim-ve-Teknoloji";
+
     document.getElementById('y').textContent = new Date().getFullYear();
+    document.getElementById('gh-org-btn').href = GITHUB_ORG_URL;
+    document.getElementById('gh-org-text').textContent = GITHUB_ORG_URL;
+    document.getElementById('gh-mini').textContent = GITHUB_ORG_URL.replace("https://", "");
   </script>
 </body>
 </html>
