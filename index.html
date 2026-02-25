@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Yönsa Yazılım ve Teknoloji</title>
+  <meta name="description" content="Yönsa Yazılım ve Teknoloji A.Ş. — sektörel SaaS ve özel yazılım geliştirme. Kurumsal tanıtım + geliştiricilere yönelik engineering hub." />
+  <meta name="color-scheme" content="dark light" />
+  <style>
+    :root{
+      --bg:#0b1220; --bg2:#0f1730;
+      --panel: rgba(255,255,255,.06);
+      --panel2: rgba(255,255,255,.035);
+      --border: rgba(255,255,255,.12);
+      --text:#e9efff;
+      --muted: rgba(233,239,255,.72);
+      --muted2: rgba(233,239,255,.58);
+      --brand:#7cb3ff; --brand2:#2b6cff;
+      --ok:#34d399; --warn:#fbbf24; --danger:#fb7185;
+      --shadow: 0 18px 60px rgba(0,0,0,.45);
+      --r:16px; --r2:22px; --max:1120px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: var(--sans);
+      color: var(--text);
+      background:
+        radial-gradient(1200px 520px at 25% -10%, rgba(124,179,255,.18), transparent 60%),
+        radial-gradient(900px 420px at 95% 10%, rgba(43,108,255,.14), transparent 55%),
+        linear-gradient(180deg, var(--bg), var(--bg2));
+      line-height:1.55;
+    }
+    a{color:inherit}
+    .container{max-width:var(--max); margin:0 auto; padding:0 20px}
+    .top{
+      position:sticky; top:0; z-index:10;
+      backdrop-filter: blur(10px);
+      background: rgba(11,18,32,.62);
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    .top-inner{display:flex; align-items:center; justify-content:space-between; gap:14px; padding:14px 0}
+    .brand{display:flex; align-items:center; gap:10px; text-decoration:none}
+    .mark{
+      width:34px;height:34px;border-radius:10px;
+      background: linear-gradient(145deg, rgba(124,179,255,.95), rgba(43,108,255,.8));
+      box-shadow: 0 10px 30px rgba(43,108,255,.22);
+    }
+    .brand b{letter-spacing:.2px}
+    nav{display:flex; gap:10px; flex-wrap:wrap}
+    nav a{
+      text-decoration:none; color:var(--muted);
+      padding:8px 10px; border-radius:999px;
+      border:1px solid transparent;
+      font-family: var(--mono);
+      font-size:12px;
+    }
+    nav a:hover{background:rgba(255,255,255,.05); color:var(--text); border-color:rgba(255,255,255,.08)}
+    .btn{
+      display:inline-flex; align-items:center; gap:10px;
+      text-decoration:none;
+      padding:10px 12px; border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+    }
+    .btn:hover{background:rgba(255,255,255,.10)}
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(124,179,255,.95), rgba(43,108,255,.90));
+      border-color: rgba(124,179,255,.45);
+      color:#081226;
+    }
+    .hero{padding:64px 0 22px}
+    .hero-grid{display:grid; grid-template-columns: 1.12fr .88fr; gap:14px; align-items:stretch}
+    .kicker{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:7px 10px; border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      color:var(--muted);
+      width:max-content;
+      font-family: var(--mono);
+      font-size:12px;
+    }
+    .dot{width:8px;height:8px;border-radius:99px;background:var(--ok); box-shadow:0 0 0 4px rgba(52,211,153,.12)}
+    h1{margin:14px 0 10px; font-size:44px; letter-spacing:-.6px; line-height:1.08}
+    .sub{margin:0 0 18px; color:var(--muted); font-size:16.5px; max-width:80ch}
+    .cta{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
+    .panel{
+      background: var(--panel);
+      border:1px solid var(--border);
+      border-radius: var(--r2);
+      box-shadow: var(--shadow);
+    }
+    .hero-card{padding:16px}
+    .grid2{display:grid; grid-template-columns: repeat(2, 1fr); gap:12px}
+    .grid3{display:grid; grid-template-columns: repeat(3, 1fr); gap:12px}
+    .card{
+      padding:16px;
+      border-radius: var(--r);
+      background: var(--panel2);
+      border:1px solid rgba(255,255,255,.10);
+    }
+    .card h3{margin:0 0 8px; font-size:16px}
+    .card p{margin:0; color:var(--muted); font-size:14px}
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:6px 10px; border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.04);
+      color:var(--muted);
+      font-family: var(--mono);
+      font-size:12px;
+      margin-bottom:10px;
+    }
+    section{padding:42px 0}
+    .section-title{display:flex; align-items:flex-end; justify-content:space-between; gap:14px; margin-bottom:14px}
+    .section-title h2{margin:0; font-size:26px; letter-spacing:-.3px}
+    .section-title p{margin:0; color:var(--muted); max-width:90ch}
+    .hr{height:1px; background:rgba(255,255,255,.10); margin:16px 0}
+    .codebox{
+      border-radius: 16px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.25);
+      overflow:hidden;
+    }
+    .codebar{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:10px 12px;
+      border-bottom:1px solid rgba(255,255,255,.08);
+      color:var(--muted2);
+      font-family: var(--mono);
+      font-size:12px;
+    }
+    pre{
+      margin:0; padding:12px;
+      font-family: var(--mono);
+      font-size:12.5px;
+      color: rgba(233,239,255,.90);
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    .status{display:flex; align-items:center; gap:10px; flex-wrap:wrap}
+    .badge{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:7px 10px; border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size:12px;
+    }
+    .led{width:8px;height:8px;border-radius:99px; background:var(--ok); box-shadow:0 0 0 4px rgba(52,211,153,.10)}
+    .led.warn{background:var(--warn); box-shadow:0 0 0 4px rgba(251,191,36,.10)}
+    .led.danger{background:var(--danger); box-shadow:0 0 0 4px rgba(251,113,133,.10)}
+    .kv{display:grid; gap:10px}
+    .kv-row{
+      display:flex; align-items:flex-start; justify-content:space-between; gap:14px;
+      padding:12px 12px; border-radius: 14px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+    }
+    .kv-row b{font-family: var(--mono); font-size:12.5px; color:rgba(233,239,255,.9)}
+    .kv-row span{color:var(--muted2); font-size:12.5px}
+    .tag{
+      font-family: var(--mono);
+      font-size:12px;
+      color: rgba(8,18,38,.9);
+      background: rgba(124,179,255,.92);
+      border:1px solid rgba(124,179,255,.30);
+      padding:6px 10px; border-radius:999px;
+      width:max-content;
+    }
+    .footer{
+      padding:30px 0 44px;
+      border-top:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.02);
+    }
+    .footgrid{display:grid; grid-template-columns: 1.2fr .8fr; gap:16px}
+    .footgrid small{color:var(--muted2)}
+    .contact{display:grid; gap:8px; color:var(--muted)}
+    .kbd{
+      font-family: var(--mono);
+      font-size:12px;
+      padding:3px 6px;
+      border-radius:8px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.04);
+      color:var(--muted);
+    }
+    .muted{color:var(--muted)}
+    @media (max-width: 980px){
+      .hero-grid{grid-template-columns:1fr}
+      h1{font-size:38px}
+      .grid3{grid-template-columns:1fr}
+      .grid2{grid-template-columns:1fr}
+      nav{display:none}
+      .footgrid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+
+  <header class="top">
+    <div class="container">
+      <div class="top-inner">
+        <a class="brand" href="#">
+          <span class="mark" aria-hidden="true"></span>
+          <b>Yönsa Yazılım ve Teknnoloji A.Ş.</b>
+        </a>
+        <nav>
+          <a href="#about">about</a>
+          <a href="#products">products</a>
+          <a href="#engineering">engineering</a>
+          <a href="#oss">oss</a>
+          <a href="#security">security</a>
+          <a href="#contact">contact</a>
+        </nav>
+        <a class="btn primary" href="#contact">İletişim</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="about">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <div class="kicker"><span class="dot"></span><span>company + engineering</span></div>
+            <h1>Yönsa Yazılım ve Teknoloji</h1>
+            <p class="sub">
+              Yönsa, sektörel SaaS ürünleri ve özel yazılım geliştirme çalışmaları yürütür.
+              Bu sayfa hem genel tanıtım hem de geliştiriciler için teknik kaynaklara giriş noktasıdır.
+            </p>
+            <div class="cta">
+              <a class="btn primary" href="https://www.yonsa.com.tr" target="_blank" rel="noreferrer">Kurumsal Site</a>
+              <a class="btn" href="#engineering">Geliştirici Alanı</a>
+              <a class="btn" href="#oss">GitHub Repos</a>
+            </div>
+            <p class="sub" style="margin-top:12px;color:var(--muted2);font-family:var(--mono);font-size:12.5px">
+              Publish: GitHub Pages • Domain: <span class="kbd">labs.yonsa.com.tr</span> (önerilen) • SSL: automatic
+            </p>
+          </div>
+
+          <aside class="panel hero-card">
+            <div class="tag">overview</div>
+            <div class="hr"></div>
+            <div class="kv">
+              <div class="kv-row"><b>Focus</b><span>Sektörel SaaS • Özel yazılım</span></div>
+              <div class="kv-row"><b>Delivery</b><span>Multi-tenant patterns • modular design</span></div>
+              <div class="kv-row"><b>Quality</b><span>CI/CD • logging • monitoring</span></div>
+              <div class="kv-row"><b>Contact</b><span>iletisim@yonsa.com.tr</span></div>
+            </div>
+            <div class="hr"></div>
+            <div class="status">
+              <span class="badge"><span class="led"></span>website: online</span>
+              <span class="badge"><span class="led"></span>docs: starting</span>
+              <span class="badge"><span class="led warn"></span>api: draft</span>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="products">
+      <div class="container">
+        <div class="section-title">
+          <h2>Ürün yaklaşımı</h2>
+          <p>İhtiyaçları tek bir panelde toparlayan, modüler genişleyebilen ve süreçleri izlenebilir kılan ürün kurguları.</p>
+        </div>
+
+        <div class="grid3">
+          <div class="card">
+            <div class="pill">sektörel-saas</div>
+            <h3>Sektörel ürünler</h3>
+            <p>Emlak, salon, klinik, restoran gibi dikeylerde süreçleri standardize eden ürün yapıları.</p>
+          </div>
+          <div class="card">
+            <div class="pill">custom-dev</div>
+            <h3>Özel yazılım</h3>
+            <p>İş akışına özel geliştirme, entegrasyon, veri dönüşümü ve otomasyon çalışmaları.</p>
+          </div>
+          <div class="card">
+            <div class="pill">ai-components</div>
+            <h3>AI bileşenleri</h3>
+            <p>Destek, görüşme analizi, sınıflandırma/özetleme gibi modüler AI entegrasyonları.</p>
+          </div>
+        </div>
+
+        <div class="hr"></div>
+
+        <div class="grid2">
+          <div class="card">
+            <h3>Dokümantasyon kültürü</h3>
+            <p>Runbook, değişiklik notları ve entegrasyon rehberleri; sürdürülebilir geliştirme için temel kabul edilir.</p>
+          </div>
+          <div class="card">
+            <h3>Güvenlik ve izlenebilirlik</h3>
+            <p>Yetkilendirme, tenant izolasyonu ve gözlemlenebilirlik; ürün kararlarının merkezindedir.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="engineering">
+      <div class="container">
+        <div class="section-title">
+          <h2>Geliştirici alanı</h2>
+          <p>Entegrasyon, mimari notlar ve örnekler. Bu bölüm “public” olacaksa linkleri güncelleyeceğiz.</p>
+        </div>
+
+        <div class="grid2">
+          <div class="card">
+            <div class="pill">stack</div>
+            <h3>Stack (örnek)</h3>
+            <p>Node.js • TypeScript • MongoDB • Docker • CI/CD • Observability.</p>
+          </div>
+          <div class="card">
+            <div class="pill">patterns</div>
+            <h3>Multi-tenant SaaS</h3>
+            <p>Tenant boundary, audit log, role/scope, rate-limit, idempotency gibi temel desenler.</p>
+          </div>
+        </div>
+
+        <div class="hr"></div>
+
+        <div class="codebox">
+          <div class="codebar">
+            <span>API quickstart (placeholder)</span>
+            <span>curl + token</span>
+          </div>
+          <pre>
+export YONSA_TOKEN="YOUR_TOKEN"
+
+curl -sS https://api.yonsa.com.tr/health \
+  -H "Authorization: Bearer $YONSA_TOKEN"
+
+curl -sS https://api.yonsa.com.tr/v1/resources \
+  -H "Authorization: Bearer $YONSA_TOKEN" \
+  -H "Content-Type: application/json"
+          </pre>
+        </div>
+
+        <p class="muted" style="margin-top:10px">
+          Not: API henüz public değilse bu alanı “coming soon” olarak bırakabiliriz.
+        </p>
+      </div>
+    </section>
+
+    <section id="oss">
+      <div class="container">
+        <div class="section-title">
+          <h2>Open-source & repositories</h2>
+          <p>Az ama gerçek repo yaklaşımı. İlk hedef: kurumsal profil + 1 küçük yardımcı paket/örnek.</p>
+        </div>
+
+        <div class="grid3">
+          <div class="card">
+            <div class="pill">repo</div>
+            <h3>yonsa-company-profile</h3>
+            <p>Kurumsal GitHub vitrini: kimlik, alanlar, linkler.</p>
+          </div>
+          <div class="card">
+            <div class="pill">docs</div>
+            <h3>docs (starting)</h3>
+            <p>Kurulum, entegrasyon, operasyon runbook ve değişiklik notları.</p>
+          </div>
+          <div class="card">
+            <div class="pill">sdk (optional)</div>
+            <h3>client SDK (optional)</h3>
+            <p>API public olursa minimal SDK + örnek projeler.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="security">
+      <div class="container">
+        <div class="section-title">
+          <h2>Security</h2>
+          <p>Güvenlik bildirimi için tek bir kanal ve net beklenti: sorumlu açıklama, hızlı triage.</p>
+        </div>
+
+        <div class="grid2">
+          <div class="card">
+            <div class="pill">reporting</div>
+            <h3>Vulnerability reporting</h3>
+            <p>Güvenlik bildirimi: <span class="kbd">security@yonsa.com.tr</span> (yoksa bu maili açman iyi olur).</p>
+          </div>
+          <div class="card">
+            <div class="pill">policy</div>
+            <h3>Disclosure policy</h3>
+            <p>72 saat içinde ilk dönüş, doğrulama ve takvimli düzeltme prensibi (isteğe göre revize).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-title">
+          <h2>İletişim</h2>
+          <p>Genel iletişim ve teknik iş birlikleri için tek nokta üzerinden ilerleyebiliriz.</p>
+        </div>
+
+        <div class="panel" style="padding:16px">
+          <div class="kv">
+            <div class="kv-row"><b>Email</b><span>iletisim@yonsa.com.tr</span></div>
+            <div class="kv-row"><b>Website</b><span>yonsa.com.tr</span></div>
+            <div class="kv-row"><b>GitHub</b><span>(organization linkini buraya koyacağız)</span></div>
+          </div>
+        </div>
+
+        <p class="muted" style="margin-top:12px">
+          Domain önerisi: <span class="kbd">labs.yonsa.com.tr</span> → GitHub Pages. DNS’i birlikte bağlayacağız.
+        </p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footgrid">
+          <div>
+            <div class="brand" style="gap:10px">
+              <span class="mark" aria-hidden="true"></span>
+              <b>Yönsa Yazılım ve Teknoloji A.Ş.</b>
+            </div>
+            <small>© <span id="y"></span> • GitHub Pages üzerinde yayınlanabilir.</small>
+          </div>
+          <div class="contact">
+            <span>İletişim: iletisim@yonsa.com.tr</span>
+            <span class="muted">Bu sayfa: company + engineering hub.</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
